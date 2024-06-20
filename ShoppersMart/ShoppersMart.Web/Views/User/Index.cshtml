@@ -1,0 +1,259 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="Shopping Mart">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+    <title>Shopping Mart</title>
+    <link href="~/static/css/app.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <style>
+
+        .hidden {
+            display: none;
+        }
+		
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    top: 55%;
+    position: absolute;
+    z-index: 9999;
+    right: 50%;
+    display: none;
+}
+
+@@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+<div class="loader"></div>
+    <main class="d-flex w-100">
+        <div class="container d-flex flex-column">
+            <div class="row vh-100" id="loginCard">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                    <div class="d-table-cell align-middle">
+
+                        <div class="text-center mt-4">
+
+                            @*  <h1 class="h2">Welcome To, Shopping Mart</h1>
+                            <p class="lead">
+                            Sign in to your account to continue
+                            </p> *@
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="m-sm-4">
+                                    <img height="100px;" style="margin-left: 85px;" src="~/assets/img/logo-black.png" />
+                                    <form id="loginForm">
+                                        <div class="mb-3">
+                                            <label class="form-label">User Name</label>
+                                            <input class="form-control form-control-lg" type="text" id="loginUsername" name="username" maxlength="255" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <input class="form-control form-control-lg" type="password" id="loginPassword" name="password" minlength="6" required>
+                                            <small>
+                                                <a class="form-toggle" onclick="toggleForm(0)">Sign Up</a>
+                                            </small>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <button type="submit" class="btn btn-lg btn-primary">Sign in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row vh-100 hidden" id="signupCard">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+                    <div class="d-table-cell align-middle">
+
+                        <div class="text-center mt-4">
+                            <h1 class="h2">Get started</h1>
+                            <p class="lead">
+                                Signup in Welcome To, Shopping Mart.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="m-sm-4">
+                                    <form id="signupForm">
+                                        <div class="mb-3">
+                                            <label class="form-label">User Name</label>
+                                            <input class="form-control form-control-lg" id="signupUsername" name="username" maxlength="255" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Company</label>
+                                            <input class="form-control form-control-lg" id="signupEmail" name="email" maxlength="255" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input class="form-control form-control-lg" type="email" name="email" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Password</label>
+                                            <input class="form-control form-control-lg" type="password" id="signupPassword" name="password" minlength="6" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Confirm Password</label>
+                                            <input class="form-control form-control-lg" type="password" id="signupConfirmPassword" name="confirmPassword" required>
+                                            <small>
+                                                <a class="form-toggle" onclick="toggleForm(1)">Back to Login</a>
+                                            </small>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <button type="submit" class="btn btn-lg btn-primary">Sign up</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="~/js/login.js"></script>
+    <script src="~/static/js/app.js"></script>
+</body>
+
+</html>
+
+@* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="~/assets/css/material-kit.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 500px;
+        }
+
+        .form-toggle {
+            margin-top: 10px;
+            text-decoration: underline;
+            cursor: pointer;
+            color: rgb(33 33 33);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="loginCard">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="loginUsername">Username</label>
+                <input type="text" class="form-control" id="loginUsername" name="username" maxlength="255" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" class="form-control" id="loginPassword" name="password" minlength="6" required>
+            </div>
+            <button type="submit" class="btn btn-default btn-block">Login</button>
+        </form>
+        <div class="form-toggle" onclick="toggleForm()">Sign Up</div>
+    </div>
+
+    <div class="card hidden" id="signupCard">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="signupUsername">Username</label>
+                <input type="text" class="form-control" id="signupUsername" name="username" maxlength="255" required>
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" name="email" maxlength="255" required>
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <input type="password" class="form-control" id="signupPassword" name="password" minlength="6" required>
+            </div>
+            <div class="form-group">
+                <label for="signupConfirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="signupConfirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn btn-default btn-block">Sign Up</button>
+        </form>
+        <div class="form-toggle" onclick="toggleForm()">Back to Login</div>
+    </div>
+
+    <!-- Bootstrap JS (optional for dropdowns, modals, etc.) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="~/js/login.js"></script>
+
+</body>
+</html>
+ *@
